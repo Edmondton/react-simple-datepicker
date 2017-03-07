@@ -12,6 +12,8 @@ export default class Calendar extends Component {
   constructor (props) {
     super(props);
 
+    moment.locale(props.locale);
+
     this.state = {
       displayedMonth: props.date.clone().startOf('month')
     };
@@ -85,10 +87,8 @@ export default class Calendar extends Component {
 
   selectDay (date) {
     const { dateFormat } = this.props;
-    if (dateFormat) {
-      date = date.format(dateFormat);
-    }
-    this.props.selectDay(date);
+    const formattedDate = dateFormat ? date.format(dateFormat) : null;
+    this.props.selectDay(date, formattedDate);
   }
 
   render () {

@@ -61,7 +61,8 @@ export default class DatePicker extends Component {
       monthClassName,
       prevMonthClassName,
       nextMonthClassName,
-      dateFormat
+      dateFormat,
+      locale
     } = this.props;
 
     if (!this.state.isCalendarOpen) {
@@ -81,16 +82,17 @@ export default class DatePicker extends Component {
                      monthClassName={monthClassName}
                      prevMonthClassName={prevMonthClassName}
                      nextMonthClassName={nextMonthClassName}
-                     dateFormat={dateFormat} />;
+                     dateFormat={dateFormat}
+                     locale={locale} />;
   }
 
-  selectDay (date) {
+  selectDay (date, formattedDate) {
     const { clickOnDate, name } = this.props;
     if (clickOnDate) {
       this.setState({
         isCalendarOpen: false
       });
-      return clickOnDate(date, name);
+      return clickOnDate(date, name, formattedDate);
     }
 
     this.setState({
