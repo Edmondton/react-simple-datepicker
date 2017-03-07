@@ -12,8 +12,6 @@ export default class Calendar extends Component {
   constructor (props) {
     super(props);
 
-    moment.locale(props.locale);
-
     this.state = {
       displayedMonth: props.date.clone().startOf('month')
     };

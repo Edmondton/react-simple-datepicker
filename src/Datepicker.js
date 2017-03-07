@@ -8,6 +8,8 @@ export default class DatePicker extends Component {
   constructor (props) {
     super(props);
 
+    moment.locale(props.locale);
+
     this.state = {
       date: moment(props.date),
       isCalendarOpen: false
@@ -58,7 +60,8 @@ export default class DatePicker extends Component {
       dayFromOtherMonthClassName,
       monthClassName,
       prevMonthClassName,
-      nextMonthClassName
+      nextMonthClassName,
+      dateFormat
     } = this.props;
 
     if (!this.state.isCalendarOpen) {
@@ -77,7 +80,8 @@ export default class DatePicker extends Component {
                      dayFromOtherMonthClassName={dayFromOtherMonthClassName}
                      monthClassName={monthClassName}
                      prevMonthClassName={prevMonthClassName}
-                     nextMonthClassName={nextMonthClassName} />;
+                     nextMonthClassName={nextMonthClassName}
+                     dateFormat={dateFormat} />;
   }
 
   selectDay (date) {
@@ -136,9 +140,13 @@ DatePicker.propTypes = {
   dayActiveClassName: PropTypes.string,
   dayDisabledClassName: PropTypes.string,
   dayFromOtherMonthClassName: PropTypes.string,
+  locale: PropTypes.string,
+  dateFormat: PropTypes.string
 };
 
 DatePicker.defaultProps = {
   date: new Date(),
-  datepickerClassName: 'datepicker'
+  datepickerClassName: 'datepicker',
+  locale: 'en',
+  dateFormat: false
 };
