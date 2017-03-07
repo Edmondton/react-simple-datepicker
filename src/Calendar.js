@@ -12,6 +12,8 @@ export default class Calendar extends Component {
   constructor (props) {
     super(props);
 
+    moment.locale(props.locale);
+
     this.state = {
       displayedMonth: props.date.clone().startOf('month')
     };
@@ -84,6 +86,10 @@ export default class Calendar extends Component {
   }
 
   selectDay (date) {
+    const { dateFormat } = this.props;
+    if (dateFormat) {
+      date = date.format(dateFormat);
+    }
     this.props.selectDay(date);
   }
 
@@ -136,11 +142,15 @@ Calendar.propTypes = {
   dayActiveClassName: PropTypes.string,
   dayDisabledClassName: PropTypes.string,
   dayFromOtherMonthClassName: PropTypes.string,
+  locale: PropTypes.string,
+  dateFormat: PropTypes.string
 };
 
 Calendar.defaultProps = {
   calendarClassName: 'calendar',
   prevMonthClassName: 'calendar__prevMonth',
   nextMonthClassName: 'calendar__nextMonth',
-  monthClassName: 'calendar__month'
+  monthClassName: 'calendar__month',
+  locale: 'en',
+  dateFormat: false
 };
