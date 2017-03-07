@@ -90,7 +90,8 @@ export default class DatePicker extends Component {
     const { clickOnDate, name } = this.props;
     if (clickOnDate) {
       this.setState({
-        isCalendarOpen: false
+        isCalendarOpen: false,
+        date: date
       });
       return clickOnDate(date, name, formattedDate);
     }

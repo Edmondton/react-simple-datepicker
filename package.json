@@ -1,6 +1,6 @@
 {
   "name": "react-simple-datepicker-ecurring",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "React datepicker component",
   "main": "lib/Datepicker.js",
   "scripts": {
