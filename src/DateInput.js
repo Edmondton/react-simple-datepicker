@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 export default class DateInput extends Component {
   render () {

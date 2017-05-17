@@ -32,7 +32,8 @@
     "webpack": "^1.12.14"
   },
   "dependencies": {
-    "moment": "^2.11.2"
+    "moment": "^2.11.2",
+    "prop-types": "^15.5.10"
   },
   "peerDependencies": {
     "react": "^0.14.0"

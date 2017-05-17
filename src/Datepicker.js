@@ -1,8 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
 import DateInput from './DateInput';
 import Calendar from './Calendar';
+import PropTypes from 'prop-types';
 
 export default class DatePicker extends Component {
   constructor (props) {

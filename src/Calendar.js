@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import Day from './Day';
 import {
   daysOfMonth,
@@ -7,6 +7,7 @@ import {
   isDateFromPrevMonth
 } from './utils/';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 export default class Calendar extends Component {
   constructor (props) {
